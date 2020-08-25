@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: legal-gateway-service
+
+server:
+  port: 8762
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+    hostname: localhost
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: info, health, routes,filters
+
+zuul:
+  host:
+    connect-timeout-millis: 5000000
+    socket-timeout-millis: 5000000
+  ignoredService: '*'
+  routes:
+    LawyerService:
+      path: /legal/lawyer
+      serviceId: LAWYER-SERVICE
+      stripPrefix: true
+    CustomerService:
+      path: /legal/consumer
+      serviceId: CONSUMER-SERVICE
+      stripPrefix: true
