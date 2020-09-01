@@ -16,15 +16,12 @@ public class LawyerController {
 
     @PostMapping("/lawyer")
     public Lawyer createLawyer(@RequestBody Lawyer lawyer) {
-        Lawyer savedLawyer=lawyerService.saveCustomer(lawyer);
-        return savedLawyer;
+        return lawyerService.saveCustomer(lawyer);
 
     }
     @GetMapping("/lawyer")
     public List<Lawyer> getAllLawyers() {
-        List<Lawyer> getAllLawyers=lawyerService.getAlLawyers();
-        return getAllLawyers;
-
+        return lawyerService.getAlLawyers();
     }
 
 }
