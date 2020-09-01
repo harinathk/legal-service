@@ -1,4 +1,4 @@
-# Legal Service - A Simple Microservices Demo
+# Legal Service - Microservices
 This backend version of the Legal API application only provides a REST API. There is no UI.
 
 ## Microservices
