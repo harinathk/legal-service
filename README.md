@@ -10,7 +10,8 @@ This backend version of the Legal API application only provides a REST API. Ther
 ## Running the services locally
 
 ### With maven command line
-    ```
+
+````
     git clone https://github.com/harinathk/legal-service.git
     cd legal-service
     
@@ -25,4 +26,4 @@ This backend version of the Legal API application only provides a REST API. Ther
     
     cd lawyer-service
     ./mvnw spring-boot:run
-    ```
+````
