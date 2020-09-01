@@ -9,6 +9,7 @@ import com.cognizant.legal.repo.LawyerRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -57,5 +58,13 @@ public class CustomerServiceImpl implements CustomerService {
         }
         else
             return "Customer or Lawyer Not Found";
+    }
+
+
+    @Override
+    public List<Customer> getAllCustomers() {
+        List<Customer> customers= customerRepository.findAll();
+
+        return  customers;
     }
 }

@@ -2,12 +2,12 @@ package com.cognizant.legal.controller;
 
 import com.cognizant.legal.domain.Customer;
 import com.cognizant.legal.domain.FavoriteLawyerRequest;
+import com.cognizant.legal.domain.Lawyer;
 import com.cognizant.legal.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -34,6 +34,11 @@ public class CustomerController {
     public String favoriteLawyer(@RequestBody FavoriteLawyerRequest favoriteLawyerRequest) {
         return customerService.favoriteLawyer(Long.parseLong(favoriteLawyerRequest.getLawyerId()), 
                 Long.parseLong(favoriteLawyerRequest.getCustomerId()));
+    }
+    
+    @GetMapping("/consumer")
+    public List<Customer> getAllCustomers() {
+        return customerService.getAllCustomers();
     }
 
 
