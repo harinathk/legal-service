@@ -27,3 +27,10 @@ This backend version of the Legal API application only provides a REST API. Ther
     cd lawyer-service
     ./mvnw spring-boot:run
 ````
+### REST APIs to Test
+
+http://192.168.1.139:8762/consumers/consumer
+
+http://192.168.1.139:8762/lawyers/lawyer
+
+http://192.168.1.139:8762/consumers/consumer/favlawyer/5
