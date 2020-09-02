@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long customerId;
 
     private String userName;
     private String password;
@@ -58,19 +58,18 @@ public class Customer {
         this.address = address;
     }
 
-    public Long getId() {
-        return id;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
-
 
     @Override
     public String toString() {
         return "Customer{" +
-                "id=" + id +
+                "customerId=" + customerId +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
