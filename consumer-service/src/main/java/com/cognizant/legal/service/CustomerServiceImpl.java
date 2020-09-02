@@ -3,6 +3,7 @@ package com.cognizant.legal.service;
 import com.cognizant.legal.domain.Customer;
 import com.cognizant.legal.domain.CustomerFavoriteLawyers;
 import com.cognizant.legal.domain.Lawyer;
+import com.cognizant.legal.domain.LawyerDTO;
 import com.cognizant.legal.repo.CustomerFavoriteLawyersRepository;
 import com.cognizant.legal.repo.CustomerRepository;
 import com.cognizant.legal.repo.LawyerRepository;
@@ -70,7 +71,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
     @Override
-    public List<Lawyer> getFavoriteLawyers(Long customerId) {
-        customerRepository.
+    public List<LawyerDTO> getFavoriteLawyers(Long customerId) {
+       return customerFavoriteLawyersRepository.findCustomerFavoriteLawyersByCustomerIdBy(customerId);
     }
 }

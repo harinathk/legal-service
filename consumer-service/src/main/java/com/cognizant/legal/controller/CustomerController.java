@@ -3,6 +3,7 @@ package com.cognizant.legal.controller;
 import com.cognizant.legal.domain.Customer;
 import com.cognizant.legal.domain.FavoriteLawyerRequest;
 import com.cognizant.legal.domain.Lawyer;
+import com.cognizant.legal.domain.LawyerDTO;
 import com.cognizant.legal.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -45,10 +46,10 @@ public class CustomerController {
     }
 
 
-//    @GetMapping("/favlawyer/{id}")
-//    public List<Customer> getFavoriteLawyers() {
-//        return customerService.get;
-//    }
+    @GetMapping("/favlawyer/{id}")
+    public List<LawyerDTO> getFavoriteLawyers(@PathVariable Long id) {
+        return customerService.getFavoriteLawyers(id);
+    }
     
     /**
      * Tag favorite lawyers to the consumer
