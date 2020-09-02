@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/legal")
+@RequestMapping("/lawyer")
 public class LawyerController {
 
     @Autowired
     LawyerService lawyerService;
 
-    @PostMapping("/lawyer")
+    @PostMapping//("/lawyer")
     public Lawyer createLawyer(@RequestBody Lawyer lawyer) {
         return lawyerService.saveCustomer(lawyer);
 
     }
-    @GetMapping("/lawyer")
+    @GetMapping//("/lawyer")
     public List<Lawyer> getAllLawyers() {
         return lawyerService.getAlLawyers();
     }

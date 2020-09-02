@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/legal")
+@RequestMapping("/consumer")
 public class CustomerController {
 
     final
@@ -25,21 +25,42 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @PostMapping("/consumer")
+    /**
+     * Get All Consumers
+     * @return
+     */
+    @GetMapping
+    public List<Customer> getAllCustomers() {
+        return customerService.getAllCustomers();
+    }
+
+    /**
+     * Add consumer
+     * @param customer
+     * @return
+     */
+    @PostMapping
     public Customer createCustomer(@RequestBody Customer customer) {
         return customerService.saveCustomer(customer);
     }
 
+
+//    @GetMapping("/favlawyer/{id}")
+//    public List<Customer> getFavoriteLawyers() {
+//        return customerService.get;
+//    }
+    
+    /**
+     * Tag favorite lawyers to the consumer
+     * @param favoriteLawyerRequest
+     * @return
+     */
     @PostMapping("/favlawyer")
     public String favoriteLawyer(@RequestBody FavoriteLawyerRequest favoriteLawyerRequest) {
         return customerService.favoriteLawyer(Long.parseLong(favoriteLawyerRequest.getLawyerId()), 
                 Long.parseLong(favoriteLawyerRequest.getCustomerId()));
     }
     
-    @GetMapping("/consumer")
-    public List<Customer> getAllCustomers() {
-        return customerService.getAllCustomers();
-    }
-
+ 
 
 }

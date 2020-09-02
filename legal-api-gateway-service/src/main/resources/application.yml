@@ -29,11 +29,11 @@ zuul:
     socket-timeout-millis: 5000000
   ignoredService: '*'
   routes:
-    LawyerService:
-      path: /legal/lawyer
+    lawyer-service:
+      path: /lawyers/**
       serviceId: LAWYER-SERVICE
       stripPrefix: true
-    CustomerService:
-      path: /legal/consumer
+    consumer-service:
+      path: /consumers/**
       serviceId: CONSUMER-SERVICE
       stripPrefix: true

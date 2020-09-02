@@ -13,4 +13,6 @@ public interface CustomerService {
     public String favoriteLawyer(Long lawyerId,Long customerId);
 
     List<Customer> getAllCustomers();
+    
+    List<Lawyer> getFavoriteLawyers(Long customerId);
 }

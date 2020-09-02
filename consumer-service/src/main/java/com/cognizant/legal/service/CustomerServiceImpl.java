@@ -67,4 +67,10 @@ public class CustomerServiceImpl implements CustomerService {
 
         return  customers;
     }
+
+
+    @Override
+    public List<Lawyer> getFavoriteLawyers(Long customerId) {
+        customerRepository.
+    }
 }
