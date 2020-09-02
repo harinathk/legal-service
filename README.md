@@ -21,11 +21,12 @@ This backend version of the Legal API application only provides a REST API. Ther
     cd legal-api-gateway-service
     ./mvnw spring-boot:run
     
+    cd lawyer-service
+    ./mvnw spring-boot:run
+
     cd consumer-service
     ./mvnw spring-boot:run
     
-    cd lawyer-service
-    ./mvnw spring-boot:run
 ````
 ### REST APIs to Test
 
